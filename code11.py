@@ -82,7 +82,7 @@ def main():
                                                 ALARM_ON = True
                                                 t = Thread(target=sound_alarm,
                                                                 args=('C:/Users/HP/Desktop/alarm.wav',))
-                                                t.deamon = True
+                                                t.deamon = True  #The Daemon Thread does not block the main thread from exiting and continues to run in the background
                                                 t.start()
 
                                         # draw an alarm on the frame
