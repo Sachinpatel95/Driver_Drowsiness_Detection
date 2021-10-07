@@ -81,7 +81,7 @@ def main():
                                         if not ALARM_ON:
                                                 ALARM_ON = True
                                                 t = Thread(target=sound_alarm,
-                                                                args=('alarm1.mp3',))
+                                                                args=('alarm.mp3',))
                                                 t.deamon = True
                                                 t.start()
 
