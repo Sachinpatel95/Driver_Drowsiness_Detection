@@ -81,7 +81,7 @@ def main():
                                         if not ALARM_ON:
                                                 ALARM_ON = True
                                                 t = Thread(target=sound_alarm,
-                                                                args=('alarm.mp3',))
+                                                                args=('C:/Users/HP/Desktop/alarm.wav',))
                                                 t.deamon = True
                                                 t.start()
 
@@ -109,8 +109,6 @@ def main():
     # do a bit of cleanup
     video_capture.release()
     cv2.destroyAllWindows()
-
-
 
 
 
