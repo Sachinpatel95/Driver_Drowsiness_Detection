@@ -11,13 +11,13 @@ import numpy as np
 # define two constants, one for the eye aspect ratio to indicate
 # blink and then a second constant for the number of consecutive frames
 # the eye must be below the threshold to set off the alarm
-MIN_AER = 0.30
-EYE_AR_CONSEC_FRAMES = 10
+MIN_AER = 0.30  #Minimun eye aspect ratio
+EYE_AR_CONSEC_FRAMES = 10   #After passing this number of frames we will detect.
 
 # initialize the frame counter as well as a boolean used to
 # indicate if the alarm is going off
-COUNTER = 0
-ALARM_ON = False
+COUNTER = 0 
+ALARM_ON = False #default alarm is false
 
 def eye_aspect_ratio(eye):
  # compute the euclidean distances between the two sets of
@@ -42,8 +42,8 @@ def sound_alarm(alarm_file):
 def main():
     global COUNTER
     video_capture = cv2.VideoCapture(0)
-    while True:
-        ret, frame = video_capture.read(0)
+    while True:       
+        ret, frame = video_capture.read(0)   #reading video capture
 
         # get it into the correct format
         #small_frame = cv2.resize(frame, (0, 0), fx=0.25, fy=0.25)
@@ -51,7 +51,7 @@ def main():
 
         # get the correct face landmarks
         
-        face_landmarks_list = face_recognition.face_landmarks(frame)
+        face_landmarks_list = face_recognition.face_landmarks(frame) #face recognition module to get face landmarks like eyes,nose,etc..
 
             # get eyes
         for face_landmark in face_landmarks_list:
